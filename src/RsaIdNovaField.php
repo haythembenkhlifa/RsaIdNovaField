@@ -33,8 +33,8 @@ class RsaIdNovaField extends Field
     public function showBirthDay(bool $showBirthDay = true){
         return $this->withMeta(["showBirthDay" => $showBirthDay]);
     }
-    public function showType(bool $showType = true){
-        return $this->withMeta(["showType" => $showType]);
+    public function showCitizenship(bool $showCitizenship = true){
+        return $this->withMeta(["showCitizenship" => $showCitizenship]);
     }
     public function showGenderIcon(bool $showGenderIcon = true){
         return $this->withMeta(["showGenderIcon" => $showGenderIcon]);
