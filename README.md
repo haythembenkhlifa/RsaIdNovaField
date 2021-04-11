@@ -7,7 +7,7 @@ Package Description: A Laravel Nova field for RSA IdNumber Validation
 
 
 
-![](animation.PNG)
+![](animation.gif)
 
 ## Installation
 
