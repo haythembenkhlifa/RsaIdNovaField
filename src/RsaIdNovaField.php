@@ -80,6 +80,10 @@ class RsaIdNovaField extends Field
       return $this->withMeta([]);
     }
 
+    public function acceptFullIdOnly(bool $acceptFullIdOnly =false){
+      return $this->withMeta(["acceptFullIdOnly"=>$acceptFullIdOnly]);
+    }
+
 
     public function rules($rules)
     {
