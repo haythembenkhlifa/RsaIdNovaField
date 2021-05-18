@@ -123,9 +123,9 @@ export default {
             var id_year = prefix + year;
             var id_month = idNumber.substring(2,4);
             var id_day = idNumber.substring(4,6);
-            this.birth_day = id_year + "/" + id_month +"/" + id_day
-            this.birth_day = id_year + "/" + id_month +"/" + id_day
-            this.age = this.ageFromDateOfBirthday(this.birth_day);
+            var dateFormat = require("dateformat");
+            this.birth_day = dateFormat(new Date(id_year + "/" + id_month +"/" + id_day), this.field.birthdayFormat || "yyyy/mm/dd");
+            this.age = this.ageFromDateOfBirthday(id_year + "/" + id_month +"/" + id_day);
         },
         reset(){
             this.percentage = 0;
