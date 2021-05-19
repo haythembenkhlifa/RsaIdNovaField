@@ -17,6 +17,9 @@
                 </div>
 
                 <font-awesome-icon v-show="this.field.showValidationIcon == null ? true : this.field.showValidationIcon" class="mx-2 "  :icon="['fas','check-circle']" :color="valid ? 'green' : 'red'" />
+                    <div v-show="this.helpText != null" class="help-text help-text mt-2">
+                        {{ this.helpText }}
+                    </div>
                 <h4 v-show="valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"  class=" mr-2 mb-2 mt-3 ">Birth Day : {{birth_day}}</h4>
                 <h4 class="mr-2 my-2" v-show="valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)">Gender : <font-awesome-icon  class="mr-2"  :icon="['fas',gender == 'F' ? this.field.femaleIcon == null ? 'female': this.field.femaleIcon : this.field.maleIcon == null ? 'male' : this.field.maleIcon]" /></h4>
                 <h4 v-show="valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"  class="mr-2 my-2">Citizenship : {{citizenship}}</h4>
@@ -40,7 +43,8 @@ export default {
             gender :  null,
             citizenship : null,
             valid:false,
-            percentage:50
+            percentage:50,
+            helpText:null,
         }
     },
     methods: {
@@ -138,6 +142,8 @@ export default {
          * Set the initial, internal value for the field.
          */
         setInitialValue() {
+            this.helpText=this.field.helpText,
+            this.field.helpText = null;
             this.$children[0].$el.lastElementChild.className = "py-6 px-8";
             this.value = this.field.value || ''
             this.checkId();

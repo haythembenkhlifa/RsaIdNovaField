@@ -11257,7 +11257,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Chrome, Safari, Edge, Opera */\ninput[data-v-c023248a]::-webkit-outer-spin-button,\ninput[data-v-c023248a]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[Citizenship=number][data-v-c023248a] {\n  -moz-appearance: idNumberfield;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Chrome, Safari, Edge, Opera */\ninput[data-v-c023248a]::-webkit-outer-spin-button,\ninput[data-v-c023248a]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[Citizenship=number][data-v-c023248a] {\n  -moz-appearance: idNumberfield;\n}\n", ""]);
 
 // exports
 
@@ -11641,6 +11641,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -11655,7 +11658,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             gender: null,
             citizenship: null,
             valid: false,
-            percentage: 50
+            percentage: 50,
+            helpText: null
         };
     },
 
@@ -11754,6 +11758,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Set the initial, internal value for the field.
          */
         setInitialValue: function setInitialValue() {
+            this.helpText = this.field.helpText, this.field.helpText = null;
             this.$children[0].$el.lastElementChild.className = "py-6 px-8";
             this.value = this.field.value || '';
             this.checkId();
@@ -38139,6 +38144,28 @@ var render = function() {
                 color: _vm.valid ? "green" : "red"
               }
             }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: this.helpText != null,
+                    expression: "this.helpText != null"
+                  }
+                ],
+                staticClass: "help-text help-text mt-2"
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(this.helpText) +
+                    "\n                "
+                )
+              ]
+            ),
             _vm._v(" "),
             _c(
               "h4",
