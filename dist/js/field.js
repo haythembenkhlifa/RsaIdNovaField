@@ -10888,6 +10888,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -11015,150 +11034,322 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "w-3/4 py-4 break-words" },
-      [
-        _c(
-          "p",
-          { staticClass: "text-90 inline-block mr-2" },
-          [
-            _c("font-awesome-icon", {
-              staticClass: "inline-block mr-2 ",
-              staticStyle: { "margin-top": "0.59em" },
-              attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
-            }),
-            _vm._v("\n            " + _vm._s(this.field.value) + "\n        ")
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("font-awesome-icon", {
+    _c("div", { staticClass: "w-3/4 py-4 break-words" }, [
+      _c(
+        "div",
+        {
           directives: [
             {
               name: "show",
               rawName: "v-show",
-              value:
-                this.field.showValidationIcon == null
-                  ? true
-                  : this.field.showValidationIcon,
-              expression:
-                "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
+              value: this.field.displaySmall,
+              expression: "this.field.displaySmall"
             }
           ],
-          staticClass: "mx-2 ",
-          attrs: {
-            icon: ["fas", "check-circle"],
-            color: _vm.valid ? "green" : "red"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "h4",
-          {
+          staticClass: "flex flex-row items-center"
+        },
+        [
+          _c(
+            "p",
+            { staticClass: "text-90 flex flex-row items-center  mr-2" },
+            [
+              _c("font-awesome-icon", {
+                staticClass: "inline-block mr-2 ",
+                staticStyle: { "margin-top": "-5px" },
+                attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
+              }),
+              _vm._v(
+                "\n                    " +
+                  _vm._s(this.field.value) +
+                  "\n                "
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("font-awesome-icon", {
             directives: [
               {
                 name: "show",
                 rawName: "v-show",
                 value:
-                  _vm.valid &&
-                  _vm.birth_day &&
-                  (this.field.showBirthDay == null
+                  this.field.showValidationIcon == null
                     ? true
-                    : this.field.showBirthDay),
+                    : this.field.showValidationIcon,
                 expression:
-                  "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
+                  "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
               }
             ],
-            staticClass: " mr-2 mb-2 mt-3 "
-          },
-          [_vm._v("Birth Day : " + _vm._s(_vm.birth_day))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h4",
-          {
+            staticClass: "mx-2 ",
+            attrs: {
+              icon: ["fas", "check-circle"],
+              color: _vm.valid ? "green" : "red"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.birth_day &&
+                    (this.field.showBirthDay == null
+                      ? true
+                      : this.field.showBirthDay),
+                  expression:
+                    "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
+                }
+              ],
+              staticClass: " mr-2"
+            },
+            [_vm._v(_vm._s(_vm.birth_day))]
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.gender &&
+                    (this.field.showGenderIcon == null
+                      ? true
+                      : this.field.showGenderIcon),
+                  expression:
+                    "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
+                }
+              ],
+              staticClass: "mr-2"
+            },
+            [
+              _c("font-awesome-icon", {
+                attrs: {
+                  icon: [
+                    "fas",
+                    _vm.gender == "F"
+                      ? this.field.femaleIcon == null
+                        ? "female"
+                        : this.field.femaleIcon
+                      : this.field.maleIcon == null
+                      ? "male"
+                      : this.field.maleIcon
+                  ]
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.citizenship &&
+                    (this.field.showCitizenship == null
+                      ? true
+                      : this.field.showCitizenship),
+                  expression:
+                    "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
+                }
+              ],
+              staticClass: "mr-2"
+            },
+            [_vm._v(_vm._s(_vm.citizenship))]
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.age &&
+                    (this.field.showAge == null ? true : this.field.showAge),
+                  expression:
+                    "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
+                }
+              ],
+              staticClass: " mr-2"
+            },
+            [_vm._v(_vm._s(_vm.age))]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: !this.field.displaySmall,
+              expression: "!this.field.displaySmall"
+            }
+          ]
+        },
+        [
+          _c(
+            "p",
+            { staticClass: "text-90 inline-block mr-2" },
+            [
+              _c("font-awesome-icon", {
+                staticClass: "inline-block mr-2 ",
+                staticStyle: { "margin-top": "0.59em" },
+                attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
+              }),
+              _vm._v(
+                "\n                    " +
+                  _vm._s(this.field.value) +
+                  "\n                "
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("font-awesome-icon", {
             directives: [
               {
                 name: "show",
                 rawName: "v-show",
                 value:
-                  _vm.valid &&
-                  _vm.gender &&
-                  (this.field.showGenderIcon == null
+                  this.field.showValidationIcon == null
                     ? true
-                    : this.field.showGenderIcon),
+                    : this.field.showValidationIcon,
                 expression:
-                  "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
+                  "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
               }
             ],
-            staticClass: "mr-2 my-2"
-          },
-          [
-            _vm._v("Gender : "),
-            _c("font-awesome-icon", {
-              staticClass: "mr-2",
-              attrs: {
-                icon: [
-                  "fas",
-                  _vm.gender == "F"
-                    ? this.field.femaleIcon == null
-                      ? "female"
-                      : this.field.femaleIcon
-                    : this.field.maleIcon == null
-                    ? "male"
-                    : this.field.maleIcon
-                ]
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "h4",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value:
-                  _vm.valid &&
-                  _vm.citizenship &&
-                  (this.field.showCitizenship == null
-                    ? true
-                    : this.field.showCitizenship),
-                expression:
-                  "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
-              }
+            staticClass: "mx-2 ",
+            attrs: {
+              icon: ["fas", "check-circle"],
+              color: _vm.valid ? "green" : "red"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.birth_day &&
+                    (this.field.showBirthDay == null
+                      ? true
+                      : this.field.showBirthDay),
+                  expression:
+                    "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
+                }
+              ],
+              staticClass: " mr-2 mb-2 mt-3 "
+            },
+            [_vm._v("Birth Day : " + _vm._s(_vm.birth_day))]
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.gender &&
+                    (this.field.showGenderIcon == null
+                      ? true
+                      : this.field.showGenderIcon),
+                  expression:
+                    "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
+                }
+              ],
+              staticClass: "mr-2 my-2"
+            },
+            [
+              _vm._v("Gender : "),
+              _c("font-awesome-icon", {
+                staticClass: "mr-2",
+                attrs: {
+                  icon: [
+                    "fas",
+                    _vm.gender == "F"
+                      ? this.field.femaleIcon == null
+                        ? "female"
+                        : this.field.femaleIcon
+                      : this.field.maleIcon == null
+                      ? "male"
+                      : this.field.maleIcon
+                  ]
+                }
+              })
             ],
-            staticClass: "mr-2 my-2"
-          },
-          [_vm._v("Citizenship : " + _vm._s(_vm.citizenship))]
-        ),
-        _vm._v(" "),
-        _c(
-          "h4",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value:
-                  _vm.valid &&
-                  _vm.age &&
-                  (this.field.showAge == null ? true : this.field.showAge),
-                expression:
-                  "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
-              }
-            ],
-            staticClass: " mr-2 my-2"
-          },
-          [_vm._v(" Age : " + _vm._s(_vm.age))]
-        )
-      ],
-      1
-    )
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.citizenship &&
+                    (this.field.showCitizenship == null
+                      ? true
+                      : this.field.showCitizenship),
+                  expression:
+                    "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
+                }
+              ],
+              staticClass: "mr-2 my-2"
+            },
+            [_vm._v("Citizenship : " + _vm._s(_vm.citizenship))]
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value:
+                    _vm.valid &&
+                    _vm.age &&
+                    (this.field.showAge == null ? true : this.field.showAge),
+                  expression:
+                    "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
+                }
+              ],
+              staticClass: " mr-2 my-2"
+            },
+            [_vm._v(" Age : " + _vm._s(_vm.age))]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -11257,7 +11448,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Chrome, Safari, Edge, Opera */\ninput[data-v-c023248a]::-webkit-outer-spin-button,\ninput[data-v-c023248a]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[Citizenship=number][data-v-c023248a] {\n  -moz-appearance: idNumberfield;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Chrome, Safari, Edge, Opera */\ninput[data-v-c023248a]::-webkit-outer-spin-button,\ninput[data-v-c023248a]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[Citizenship=number][data-v-c023248a] {\n  -moz-appearance: idNumberfield;\n}\n", ""]);
 
 // exports
 
@@ -11613,6 +11804,43 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38074,205 +38302,430 @@ var render = function() {
     { attrs: { field: _vm.field, errors: _vm.errors } },
     [
       _c("template", { slot: "field" }, [
-        _c(
-          "div",
-          [
-            _c(
-              "div",
-              { staticClass: "inline-block mr-2 relative" },
-              [
-                _c("font-awesome-icon", {
-                  staticClass: "inline-block mx-2 absolute",
-                  staticStyle: { "margin-top": "0.59em" },
-                  attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.value,
-                      expression: "value"
-                    }
-                  ],
-                  staticClass:
-                    "form-control form-input form-input-bordered inline-block pl-8",
-                  class: _vm.errorClasses,
-                  style:
-                    "background: linear-gradient(90deg, aliceblue " +
-                    _vm.percentage +
-                    "%, white 0%)",
-                  attrs: {
-                    id: _vm.field.name,
-                    type: "number",
-                    placeholder: _vm.field.name
-                  },
-                  domProps: { value: _vm.value },
-                  on: {
-                    input: [
-                      function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.value = $event.target.value
-                      },
-                      _vm.checkId
-                    ]
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("font-awesome-icon", {
+        _c("div", [
+          _c(
+            "div",
+            {
               directives: [
                 {
                   name: "show",
                   rawName: "v-show",
-                  value:
-                    this.field.showValidationIcon == null
-                      ? true
-                      : this.field.showValidationIcon,
-                  expression:
-                    "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
+                  value: this.field.displaySmall,
+                  expression: "this.field.displaySmall"
                 }
               ],
-              staticClass: "mx-2 ",
-              attrs: {
-                icon: ["fas", "check-circle"],
-                color: _vm.valid ? "green" : "red"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
+              staticClass: "flex flex-row items-center"
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "inline-block mr-2 relative" },
+                [
+                  _c("font-awesome-icon", {
+                    staticClass: "inline-block mx-2 absolute",
+                    staticStyle: { "margin-top": "0.59em" },
+                    attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.value,
+                        expression: "value"
+                      }
+                    ],
+                    staticClass:
+                      "form-control form-input form-input-bordered inline-block pl-8",
+                    class: _vm.errorClasses,
+                    style:
+                      "background: linear-gradient(90deg, aliceblue " +
+                      _vm.percentage +
+                      "%, white 0%)",
+                    attrs: {
+                      id: _vm.field.name,
+                      type: "number",
+                      placeholder: _vm.field.name
+                    },
+                    domProps: { value: _vm.value },
+                    on: {
+                      input: [
+                        function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.value = $event.target.value
+                        },
+                        _vm.checkId
+                      ]
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("font-awesome-icon", {
                 directives: [
                   {
                     name: "show",
                     rawName: "v-show",
-                    value: this.helpText != null,
-                    expression: "this.helpText != null"
+                    value:
+                      this.field.showValidationIcon == null
+                        ? true
+                        : this.field.showValidationIcon,
+                    expression:
+                      "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
                   }
                 ],
-                staticClass: "help-text help-text mt-2"
-              },
-              [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(this.helpText) +
-                    "\n                "
+                staticClass: "mx-2 ",
+                attrs: {
+                  icon: ["fas", "check-circle"],
+                  color: _vm.valid ? "green" : "red"
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row items-center" }, [
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value:
+                          _vm.valid &&
+                          _vm.birth_day &&
+                          (this.field.showBirthDay == null
+                            ? true
+                            : this.field.showBirthDay),
+                        expression:
+                          "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
+                      }
+                    ],
+                    staticClass: " mr-2 "
+                  },
+                  [_vm._v(_vm._s(_vm.birth_day))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value:
+                          _vm.valid &&
+                          _vm.gender &&
+                          (this.field.showGenderIcon == null
+                            ? true
+                            : this.field.showGenderIcon),
+                        expression:
+                          "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
+                      }
+                    ],
+                    staticClass: "mr-2"
+                  },
+                  [
+                    _c("font-awesome-icon", {
+                      attrs: {
+                        icon: [
+                          "fas",
+                          _vm.gender == "F"
+                            ? this.field.femaleIcon == null
+                              ? "female"
+                              : this.field.femaleIcon
+                            : this.field.maleIcon == null
+                            ? "male"
+                            : this.field.maleIcon
+                        ]
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value:
+                          _vm.valid &&
+                          _vm.citizenship &&
+                          (this.field.showCitizenship == null
+                            ? true
+                            : this.field.showCitizenship),
+                        expression:
+                          "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
+                      }
+                    ],
+                    staticClass: "mr-2"
+                  },
+                  [_vm._v(_vm._s(_vm.citizenship))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value:
+                          _vm.valid &&
+                          _vm.age &&
+                          (this.field.showAge == null
+                            ? true
+                            : this.field.showAge),
+                        expression:
+                          "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
+                      }
+                    ],
+                    staticClass: " mr-2"
+                  },
+                  [_vm._v(_vm._s(_vm.age))]
                 )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "h4",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value:
-                      _vm.valid &&
-                      _vm.birth_day &&
-                      (this.field.showBirthDay == null
-                        ? true
-                        : this.field.showBirthDay),
-                    expression:
-                      "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
-                  }
-                ],
-                staticClass: " mr-2 mb-2 mt-3 "
-              },
-              [_vm._v("Birth Day : " + _vm._s(_vm.birth_day))]
-            ),
-            _vm._v(" "),
-            _c(
-              "h4",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value:
-                      _vm.valid &&
-                      _vm.gender &&
-                      (this.field.showGenderIcon == null
-                        ? true
-                        : this.field.showGenderIcon),
-                    expression:
-                      "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
-                  }
-                ],
-                staticClass: "mr-2 my-2"
-              },
-              [
-                _vm._v("Gender : "),
-                _c("font-awesome-icon", {
-                  staticClass: "mr-2",
-                  attrs: {
-                    icon: [
-                      "fas",
-                      _vm.gender == "F"
-                        ? this.field.femaleIcon == null
-                          ? "female"
-                          : this.field.femaleIcon
-                        : this.field.maleIcon == null
-                        ? "male"
-                        : this.field.maleIcon
-                    ]
-                  }
-                })
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: this.field.displaySmall && this.helpText != null,
+                  expression: "this.field.displaySmall && this.helpText != null"
+                }
               ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "h4",
-              {
+              staticClass: "help-text help-text mt-2"
+            },
+            [
+              _vm._v(
+                "\n                " + _vm._s(this.helpText) + "\n            "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !this.field.displaySmall,
+                  expression: "!this.field.displaySmall"
+                }
+              ]
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "inline-block mr-2 relative" },
+                [
+                  _c("font-awesome-icon", {
+                    staticClass: "inline-block mx-2 absolute",
+                    staticStyle: { "margin-top": "0.59em" },
+                    attrs: { icon: ["fas", "id-card"], color: "#d0d6dc" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.value,
+                        expression: "value"
+                      }
+                    ],
+                    staticClass:
+                      "form-control form-input form-input-bordered inline-block pl-8",
+                    class: _vm.errorClasses,
+                    style:
+                      "background: linear-gradient(90deg, aliceblue " +
+                      _vm.percentage +
+                      "%, white 0%)",
+                    attrs: {
+                      id: _vm.field.name,
+                      type: "number",
+                      placeholder: _vm.field.name
+                    },
+                    domProps: { value: _vm.value },
+                    on: {
+                      input: [
+                        function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.value = $event.target.value
+                        },
+                        _vm.checkId
+                      ]
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("font-awesome-icon", {
                 directives: [
                   {
                     name: "show",
                     rawName: "v-show",
                     value:
-                      _vm.valid &&
-                      _vm.citizenship &&
-                      (this.field.showCitizenship == null
+                      this.field.showValidationIcon == null
                         ? true
-                        : this.field.showCitizenship),
+                        : this.field.showValidationIcon,
                     expression:
-                      "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
+                      "this.field.showValidationIcon == null ? true : this.field.showValidationIcon"
                   }
                 ],
-                staticClass: "mr-2 my-2"
-              },
-              [_vm._v("Citizenship : " + _vm._s(_vm.citizenship))]
-            ),
-            _vm._v(" "),
-            _c(
-              "h4",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value:
-                      _vm.valid &&
-                      _vm.age &&
-                      (this.field.showAge == null ? true : this.field.showAge),
-                    expression:
-                      "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
-                  }
+                staticClass: "mx-2 ",
+                attrs: {
+                  icon: ["fas", "check-circle"],
+                  color: _vm.valid ? "green" : "red"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: this.helpText != null,
+                      expression: "this.helpText != null"
+                    }
+                  ],
+                  staticClass: "help-text help-text mt-2"
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(this.helpText) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "h4",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value:
+                        _vm.valid &&
+                        _vm.birth_day &&
+                        (this.field.showBirthDay == null
+                          ? true
+                          : this.field.showBirthDay),
+                      expression:
+                        "valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"
+                    }
+                  ],
+                  staticClass: " mr-2 mb-2 mt-3 "
+                },
+                [_vm._v("Birth Day : " + _vm._s(_vm.birth_day))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h4",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value:
+                        _vm.valid &&
+                        _vm.gender &&
+                        (this.field.showGenderIcon == null
+                          ? true
+                          : this.field.showGenderIcon),
+                      expression:
+                        "valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"
+                    }
+                  ],
+                  staticClass: "mr-2 my-2"
+                },
+                [
+                  _vm._v("Gender : "),
+                  _c("font-awesome-icon", {
+                    staticClass: "mr-2",
+                    attrs: {
+                      icon: [
+                        "fas",
+                        _vm.gender == "F"
+                          ? this.field.femaleIcon == null
+                            ? "female"
+                            : this.field.femaleIcon
+                          : this.field.maleIcon == null
+                          ? "male"
+                          : this.field.maleIcon
+                      ]
+                    }
+                  })
                 ],
-                staticClass: " mr-2 my-2"
-              },
-              [_vm._v(" Age : " + _vm._s(_vm.age))]
-            )
-          ],
-          1
-        )
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "h4",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value:
+                        _vm.valid &&
+                        _vm.citizenship &&
+                        (this.field.showCitizenship == null
+                          ? true
+                          : this.field.showCitizenship),
+                      expression:
+                        "valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"
+                    }
+                  ],
+                  staticClass: "mr-2 my-2"
+                },
+                [_vm._v("Citizenship : " + _vm._s(_vm.citizenship))]
+              ),
+              _vm._v(" "),
+              _c(
+                "h4",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value:
+                        _vm.valid &&
+                        _vm.age &&
+                        (this.field.showAge == null
+                          ? true
+                          : this.field.showAge),
+                      expression:
+                        "valid && age && (this.field.showAge== null ? true : this.field.showAge)"
+                    }
+                  ],
+                  staticClass: " mr-2 my-2"
+                },
+                [_vm._v(" Age : " + _vm._s(_vm.age))]
+              )
+            ],
+            1
+          )
+        ])
       ])
     ],
     2

@@ -6,6 +6,7 @@ use Exception;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Haythem\RsaIdNovaField\rules\RsaIdValidator;
+use PHPUnit\Framework\Constraint\Callback;
 
 class RsaIdNovaField extends Field
 {
@@ -41,6 +42,9 @@ class RsaIdNovaField extends Field
         return $this->withMeta(["showGenderIcon" => $showGenderIcon]);
     }
 
+    public function displaySmall(bool $displaySmall = true){
+        return $this->withMeta(["displaySmall" => $displaySmall]);
+    }
 
     public function maleIcon(String $icon = "male")
     {

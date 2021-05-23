@@ -33,6 +33,7 @@ composer require haythem/rsa-id-nova-field
             ->showCitizenship(true)
             ->showAge(true)
             ->storeAge("age")
+            ->displaySmall()
             ->storeGender("gender")
 
             /**

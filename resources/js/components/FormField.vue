@@ -2,28 +2,65 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
             <div>
-                <div class="inline-block mr-2 relative">
-                    <font-awesome-icon  class="inline-block mx-2 absolute" style="margin-top:0.59em;"  :icon="['fas','id-card']" color="#d0d6dc" />
-                    <input
-                        :id="field.name"
-                        type="number"
-                        class="form-control form-input form-input-bordered inline-block pl-8"
-                        :class="errorClasses"
-                        :placeholder="field.name"
-                        v-model="value"
-                        @input="checkId"
-                        :style="'background: linear-gradient(90deg, aliceblue '+percentage+'%, white 0%)'"
-                    />
+                <div v-show="this.field.displaySmall" class="flex flex-row items-center">
+                    <div class="inline-block mr-2 relative">
+                        <font-awesome-icon  class="inline-block mx-2 absolute" style="margin-top:0.59em;"  :icon="['fas','id-card']" color="#d0d6dc" />
+                        <input
+                            :id="field.name"
+                            type="number"
+                            class="form-control form-input form-input-bordered inline-block pl-8"
+                            :class="errorClasses"
+                            :placeholder="field.name"
+                            v-model="value"
+                            @input="checkId"
+                            :style="'background: linear-gradient(90deg, aliceblue '+percentage+'%, white 0%)'"
+                        />
+                    </div>
+
+                    <font-awesome-icon v-show="this.field.showValidationIcon == null ? true : this.field.showValidationIcon" class="mx-2 "  :icon="['fas','check-circle']" :color="valid ? 'green' : 'red'" />
+
+
+                    <div class="flex flex-row items-center">
+                    <h4 v-show="valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"  class=" mr-2 ">{{birth_day}}</h4>
+                    <h4 class="mr-2" v-show="valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)"><font-awesome-icon  class=""  :icon="['fas',gender == 'F' ? this.field.femaleIcon == null ? 'female': this.field.femaleIcon : this.field.maleIcon == null ? 'male' : this.field.maleIcon]" /></h4>
+                    <h4 v-show="valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"  class="mr-2">{{citizenship}}</h4>
+                    <h4 v-show="valid && age && (this.field.showAge== null ? true : this.field.showAge)"  class=" mr-2">{{age}}</h4>
+                    </div>
+
+                </div>
+                <div v-show="this.field.displaySmall && this.helpText != null" class="help-text help-text mt-2">
+                    {{ this.helpText }}
                 </div>
 
-                <font-awesome-icon v-show="this.field.showValidationIcon == null ? true : this.field.showValidationIcon" class="mx-2 "  :icon="['fas','check-circle']" :color="valid ? 'green' : 'red'" />
+                <div v-show="!this.field.displaySmall">
+                    <div class="inline-block mr-2 relative">
+                        <font-awesome-icon  class="inline-block mx-2 absolute" style="margin-top:0.59em;"  :icon="['fas','id-card']" color="#d0d6dc" />
+                        <input
+                            :id="field.name"
+                            type="number"
+                            class="form-control form-input form-input-bordered inline-block pl-8"
+                            :class="errorClasses"
+                            :placeholder="field.name"
+                            v-model="value"
+                            @input="checkId"
+                            :style="'background: linear-gradient(90deg, aliceblue '+percentage+'%, white 0%)'"
+                        />
+                    </div>
+
+                    <font-awesome-icon v-show="this.field.showValidationIcon == null ? true : this.field.showValidationIcon" class="mx-2 "  :icon="['fas','check-circle']" :color="valid ? 'green' : 'red'" />
+
                     <div v-show="this.helpText != null" class="help-text help-text mt-2">
                         {{ this.helpText }}
                     </div>
-                <h4 v-show="valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"  class=" mr-2 mb-2 mt-3 ">Birth Day : {{birth_day}}</h4>
-                <h4 class="mr-2 my-2" v-show="valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)">Gender : <font-awesome-icon  class="mr-2"  :icon="['fas',gender == 'F' ? this.field.femaleIcon == null ? 'female': this.field.femaleIcon : this.field.maleIcon == null ? 'male' : this.field.maleIcon]" /></h4>
-                <h4 v-show="valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"  class="mr-2 my-2">Citizenship : {{citizenship}}</h4>
-                <h4 v-show="valid && age && (this.field.showAge== null ? true : this.field.showAge)"  class=" mr-2 my-2"> Age : {{age}}</h4>
+
+                    <h4 v-show="valid && birth_day && (this.field.showBirthDay == null ? true : this.field.showBirthDay)"  class=" mr-2 mb-2 mt-3 ">Birth Day : {{birth_day}}</h4>
+                    <h4 class="mr-2 my-2" v-show="valid && gender && (this.field.showGenderIcon == null ? true : this.field.showGenderIcon)">Gender : <font-awesome-icon  class="mr-2"  :icon="['fas',gender == 'F' ? this.field.femaleIcon == null ? 'female': this.field.femaleIcon : this.field.maleIcon == null ? 'male' : this.field.maleIcon]" /></h4>
+                    <h4 v-show="valid && citizenship  && (this.field.showCitizenship== null ? true : this.field.showCitizenship)"  class="mr-2 my-2">Citizenship : {{citizenship}}</h4>
+                    <h4 v-show="valid && age && (this.field.showAge== null ? true : this.field.showAge)"  class=" mr-2 my-2"> Age : {{age}}</h4>
+                </div>
+
+
+
             </div>
         </template>
     </default-field>
